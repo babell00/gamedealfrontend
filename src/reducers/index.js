@@ -1,9 +1,7 @@
 import { combineReducers } from 'redux';
 
-import tweets from './tweetsReducer';
-import user from './userReducer';
+import gameSearch from './gameSearchReducer';
 
 export default combineReducers({
-    tweets,
-    user
+    gameSearch
 });

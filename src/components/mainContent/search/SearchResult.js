@@ -3,11 +3,12 @@ import './SearchResult.css';
 
 class SearchResult extends Component {
     render() {
+        const mappedGameSearchResult = this.props.gameSearchResults.map((game, index) => <li key={index}>game.text</li>);
         return (
             <div className="container">
                 <div className="row">
                     <div className="col-md-12">
-                        <p>My results</p>
+                        <ul>{mappedGameSearchResult}</ul>
                     </div>
                 </div>
             </div>

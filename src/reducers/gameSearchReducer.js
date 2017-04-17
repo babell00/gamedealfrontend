@@ -1,38 +1,35 @@
 export default function reducer(state = {
-    user: {
-        id: null,
-        name: null,
-        age: null
-    },
+    games: [],
     fetching: false,
     fetched: false,
     error: null
 }, action) {
     switch (action.type) {
-        case 'FETCH_USER': {
+        case 'GAMESEARCH_INIT': {
             return {
                 ...state,
                 fetching: true
             };
         }
-        case 'FETCH_USER_REJECTED': {
+        case 'GAMESEARCH_REJECTED': {
+            console.log(action.payload)
             return {
                 ...state,
                 fetching: false,
-                error: action.payload 
+                error: action.payload
             };
         }
-        case 'FETCH_USER_FULLFILLED': {
+        case 'GAMESEARCH_FULFILLED': {
             return {
                 ...state,
                 fetching: false,
                 fetched: true,
-                user: action.payload
+                games: action.payload.data
             };
         }
         default: {
             return state;
         }
     }
-    
+
 }

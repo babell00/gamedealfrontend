@@ -1,9 +1,10 @@
 import axios from 'axios';
 
-export function fetchTweets() {
+export function gameSearch(title) {
     return function (dispatch) {
+        console.log(title);
         dispatch({
-            type: 'TWEETER',
+            type: 'GAMESEARCH',
             payload: axios.get("http://rest.learncode.academy/api/test123/tweets")
         })
     }
