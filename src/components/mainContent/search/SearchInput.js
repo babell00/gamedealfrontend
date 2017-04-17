@@ -30,11 +30,15 @@ class SearchInput extends Component {
     render() {
         return (
             <div className="row">
-                <div className="col-md-11">
-                    <input onChange={this.searchInputChanged.bind(this)} onKeyPress={this.searchInputKeyPressed.bind(this)} type="text" className="form-control" />
+                <div className="col-md-10 col-sm-10 form-group searchInput">
+                    <input 
+                    className="form-control" 
+                    placeholder="Search..." 
+                    onChange={this.searchInputChanged.bind(this)} 
+                    onKeyPress={this.searchInputKeyPressed.bind(this)} type="text"/>
                 </div>
-                <div className="col-md-1">
-                    <button onClick={this.searchAction.bind(this)} type="submit" className="btn btn-default">Search</button>
+                <div className="col-md-2 col-sm-2 form-group searchButton">
+                    <button onClick={this.searchAction.bind(this)} type="submit" className="btn btn-default btn-block">Search</button>
                 </div>
             </div>
         );
