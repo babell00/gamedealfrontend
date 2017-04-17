@@ -15,25 +15,9 @@ class Search extends Component {
   render() {
     return (
       <div className="container">
-
-        <div className="row">
-          <div className="col-md-12">
-            <h1>Search</h1>
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col-md-12">
-            <SearchInput findGame={this.findGame.bind(this)} />
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col-md-12">
-            <SearchResult gameSearchResults={this.props.games} />
-          </div>
-        </div>
-
+        <h1 className="text-center">Search</h1>
+        <SearchInput findGame={this.findGame.bind(this)} />
+        <SearchResult gameSearchResults={this.props.games} />
       </div>
     );
   }
