@@ -5,7 +5,7 @@ export default function reducer(state = {
     error: null
 }, action) {
     switch (action.type) {
-        case 'GAMESEARCH_INIT': {
+        case 'GAMESEARCH_PENDING': {
             return {
                 ...state,
                 fetching: true

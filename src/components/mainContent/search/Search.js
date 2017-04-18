@@ -5,6 +5,7 @@ import './Search.css';
 
 import SearchInput from './SearchInput';
 import SearchResult from './SearchResult';
+import Loader from './Loader';
 import { gameSearch } from '../../../actions/gameSearchAction';
 
 class Search extends Component {
@@ -13,11 +14,20 @@ class Search extends Component {
   }
 
   render() {
+    const fetching = this.props.fetching;
+    var searchResults;
+
+    if (fetching) {
+      searchResults = <Loader />
+    } else {
+      searchResults = <SearchResult gameSearchResults={this.props.games} />;
+    }
+
     return (
       <div className="container">
         <h1 className="text-center">Search</h1>
         <SearchInput findGame={this.findGame.bind(this)} />
-        <SearchResult gameSearchResults={this.props.games} loading={true}/>
+        {searchResults}
       </div>
     );
   }
@@ -25,7 +35,9 @@ class Search extends Component {
 
 function mapStateToProps(store) {
   return {
-    games: store.gameSearch.games
+    games: store.gameSearch.games,
+    fetching: store.gameSearch.fetching,
+    fetched: store.gameSearch.fetched
   };
 }
 
