@@ -5,7 +5,7 @@ class SearchResult extends Component {
     render() {
         const searchResult = this.props.gameSearchResults;
         const mappedGameSearchResult = searchResult
-            .map((game, index) => <li className="list-group-item" key={index}>game.text</li>);
+            .map((game, index) => <li className="list-group-item" key={game.id}>{game.id} - {game.name}</li>);
  
         return (
             <div className="row">

@@ -38,7 +38,7 @@ class SearchInput extends Component {
                     onKeyPress={this.searchInputKeyPressed.bind(this)} type="text"/>
                 </div>
                 <div className="col-md-2 col-sm-2 form-group searchButton">
-                    <button onClick={this.searchAction.bind(this)} type="submit" className="btn btn-default btn-block">Search</button>
+                    <button onClick={this.searchAction.bind(this)} type="submit" className="btn btn-primary btn-block">Search</button>
                 </div>
             </div>
         );
