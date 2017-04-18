@@ -17,8 +17,7 @@ class Search extends Component {
       <div className="container">
         <h1 className="text-center">Search</h1>
         <SearchInput findGame={this.findGame.bind(this)} />
-        <SearchResult gameSearchResults={this.props.games} />
-        <div className="loader"></div>
+        <SearchResult gameSearchResults={this.props.games} loading={true}/>
       </div>
     );
   }

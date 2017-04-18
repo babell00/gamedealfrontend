@@ -4,10 +4,15 @@ import './SearchResult.css';
 class SearchResult extends Component {
     render() {
         const mappedGameSearchResult = this.props.gameSearchResults.map((game, index) => <li className="list-group-item" key={index}>game.text</li>);
+        content = <ul className="list-group">{mappedGameSearchResult}</ul>;
+        if(false){
+            content = <div className="loader"></div>;
+        }
+        
         return (
             <div className="row">
                 <div className="col-md-12">
-                    <ul className="list-group">{mappedGameSearchResult}</ul>
+                    {this.content}
                 </div>
             </div>
         );
